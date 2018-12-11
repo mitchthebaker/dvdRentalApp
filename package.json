@@ -11,9 +11,15 @@
     "test": "testApp.js"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pg": "^7.7.1"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "[https://github.com/mitchthebaker/dvdRentalApp]"
+  },
   "keywords": [
     "node",
     "heroku",
