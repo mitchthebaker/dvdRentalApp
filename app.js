@@ -3,10 +3,18 @@ const PORT = process.env.PORT || 5002;
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const uriString = process.env.MONGODB_URI || 'mongodb://localhost/simpletest';
 const app = express();
 
-mongoose.connect('mongodb://localhost/simpletest', { useNewUrlParser: true });
-mongoose.connect('mongodb://mbaker:OMGnoway23@ds155294.mlab.com:55294/dvdrentalapp', {useNewUrlParser: true});
+mongoose.connect(uriString, (err, res) => {
+	if(err) {
+		console.log('ERROR connecting to: ' + uriString + '.' + err);
+	}
+	else {
+		console.log('Successfully connected to: ' + uriString);
+	}
+}, { useNewUrlParser: true });
+
 
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
