@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 mongoose.connect('mongodb://localhost/simpletest', { useNewUrlParser: true });
+mongoose.connect('mongodb://mbaker:OMGnoway23@ds155294.mlab.com:55294/dvdrentalapp', {useNewUrlParser: true});
 
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
